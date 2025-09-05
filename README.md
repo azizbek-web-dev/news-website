@@ -1,61 +1,310 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# News Website
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+A modern, full-featured news website built with Laravel 11, featuring user authentication, content management, and an admin panel.
 
-## About Laravel
+## Features
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+### 🚀 Core Features
+- **User Authentication**: Registration, login, logout with Laravel Breeze
+- **Post Management**: Create, read, update, delete posts with image uploads
+- **Category System**: Organize posts into categories
+- **Comment System**: Users can comment on posts
+- **Admin Panel**: Complete content management system
+- **Responsive Design**: Mobile-first design with TailwindCSS
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+### 📱 Frontend
+- **Modern UI**: Clean, responsive design with TailwindCSS
+- **Post Listing**: Grid layout with pagination
+- **Post Details**: Full post view with comments
+- **Category Pages**: Browse posts by category
+- **User Dashboard**: Personal dashboard for authenticated users
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+### 🔧 Admin Panel
+- **Dashboard**: Statistics and recent activity overview
+- **User Management**: View, edit, and delete users
+- **Post Management**: Edit and delete posts
+- **Category Management**: Create, edit, and delete categories
+- **Comment Management**: View and delete comments
 
-## Learning Laravel
+## Technology Stack
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+- **Backend**: Laravel 11
+- **Frontend**: Blade templates with TailwindCSS
+- **Database**: SQLite (default) / MySQL / PostgreSQL
+- **Authentication**: Laravel Breeze
+- **File Storage**: Local storage with image upload support
+- **Styling**: TailwindCSS with responsive design
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+## Requirements
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+- PHP 8.2 or higher
+- Composer
+- Node.js and NPM
+- SQLite (default) or MySQL/PostgreSQL
 
-## Laravel Sponsors
+## Installation
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+### 1. Clone the Repository
 
-### Premium Partners
+```bash
+git clone https://github.com/azizbek-web-dev/news-website.git
+cd news-website
+```
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+### 2. Install Dependencies
+
+```bash
+# Install PHP dependencies
+composer install
+
+# Install Node.js dependencies
+npm install
+```
+
+### 3. Environment Setup
+
+```bash
+# Copy environment file
+cp .env.example .env
+
+# Generate application key
+php artisan key:generate
+```
+
+### 4. Configure Environment Variables
+
+Edit the `.env` file with your configuration:
+
+```env
+APP_NAME="News Website"
+APP_URL=http://localhost:8000
+
+# Database Configuration (SQLite is default)
+DB_CONNECTION=sqlite
+
+# For MySQL/PostgreSQL, uncomment and configure:
+# DB_CONNECTION=mysql
+# DB_HOST=127.0.0.1
+# DB_PORT=3306
+# DB_DATABASE=news_website
+# DB_USERNAME=root
+# DB_PASSWORD=your_password
+
+# Mail Configuration
+MAIL_FROM_ADDRESS="noreply@yourdomain.com"
+MAIL_FROM_NAME="${APP_NAME}"
+```
+
+### 5. Database Setup
+
+```bash
+# Run migrations
+php artisan migrate
+
+# (Optional) Seed the database with sample data
+php artisan db:seed
+```
+
+### 6. Storage Setup
+
+```bash
+# Create storage link for file uploads
+php artisan storage:link
+```
+
+### 7. Build Assets
+
+```bash
+# Build CSS and JavaScript assets
+npm run build
+
+# For development with hot reloading
+npm run dev
+```
+
+### 8. Start the Server
+
+```bash
+# Start Laravel development server
+php artisan serve
+```
+
+The application will be available at `http://localhost:8000`.
+
+## Usage
+
+### First Time Setup
+
+1. **Create Admin User**: The first registered user automatically becomes an admin
+2. **Access Admin Panel**: Visit `/admin` (only accessible by the first user)
+3. **Create Categories**: Set up post categories in the admin panel
+4. **Create Posts**: Start creating content through the admin panel or user interface
+
+### User Features
+
+- **Browse Posts**: View all posts on the homepage
+- **Read Full Posts**: Click on any post to read the full content
+- **Leave Comments**: Register/login to comment on posts
+- **View Categories**: Browse posts by category
+
+### Admin Features
+
+- **Dashboard**: View system statistics and recent activity
+- **Manage Users**: View, edit, and delete user accounts
+- **Manage Posts**: Edit and delete posts
+- **Manage Categories**: Create, edit, and delete categories
+- **Manage Comments**: View and delete comments
+
+## Project Structure
+
+```
+news-website/
+├── app/
+│   ├── Http/
+│   │   ├── Controllers/
+│   │   │   ├── AdminController.php      # Admin panel controller
+│   │   │   ├── PostController.php       # Post management
+│   │   │   ├── CategoryController.php   # Category management
+│   │   │   └── CommentController.php    # Comment management
+│   │   └── Middleware/
+│   │       └── AdminMiddleware.php      # Admin access control
+│   ├── Models/
+│   │   ├── User.php                     # User model
+│   │   ├── Post.php                     # Post model
+│   │   ├── Category.php                 # Category model
+│   │   └── Comment.php                  # Comment model
+│   └── Policies/
+│       └── PostPolicy.php               # Post authorization
+├── database/
+│   ├── migrations/                      # Database migrations
+│   └── seeders/                        # Database seeders
+├── resources/
+│   ├── views/
+│   │   ├── admin/                      # Admin panel views
+│   │   ├── posts/                      # Post views
+│   │   ├── categories/                 # Category views
+│   │   └── layouts/                    # Layout templates
+│   ├── css/
+│   │   └── app.css                     # TailwindCSS styles
+│   └── js/
+│       └── app.js                      # JavaScript assets
+├── routes/
+│   └── web.php                         # Application routes
+└── public/
+    └── storage/                        # Public file storage
+```
+
+## API Endpoints
+
+### Public Routes
+- `GET /` - Homepage (redirects to posts)
+- `GET /posts` - List all posts
+- `GET /posts/{post}` - View single post
+- `GET /categories` - List all categories
+- `GET /categories/{category}` - View category posts
+
+### Authenticated Routes
+- `POST /posts` - Create new post
+- `PUT /posts/{post}` - Update post
+- `DELETE /posts/{post}` - Delete post
+- `POST /comments` - Create comment
+- `POST /categories` - Create category
+- `PUT /categories/{category}` - Update category
+- `DELETE /categories/{category}` - Delete category
+
+### Admin Routes
+- `GET /admin` - Admin dashboard
+- `GET /admin/users` - Manage users
+- `GET /admin/posts` - Manage posts
+- `GET /admin/categories` - Manage categories
+- `GET /admin/comments` - Manage comments
+
+## Configuration
+
+### File Uploads
+- **Max File Size**: 2MB (configurable in `.env`)
+- **Allowed Types**: jpg, jpeg, png, gif
+- **Storage**: Local storage (configurable for AWS S3)
+
+### Pagination
+- **Posts per page**: 10 (configurable)
+- **Comments per page**: 10 (configurable)
+- **Admin items per page**: 10 (configurable)
+
+### Admin Access
+- Only the first registered user can access the admin panel
+- Admin users can manage all content and users
+- Regular users can only manage their own posts
+
+## Development
+
+### Running Tests
+```bash
+php artisan test
+```
+
+### Code Style
+```bash
+# Format code with Laravel Pint
+./vendor/bin/pint
+```
+
+### Database Seeding
+```bash
+# Seed with sample data
+php artisan db:seed
+```
+
+## Deployment
+
+### Production Checklist
+1. Set `APP_ENV=production` in `.env`
+2. Set `APP_DEBUG=false` in `.env`
+3. Configure proper database credentials
+4. Set up file storage (local or AWS S3)
+5. Configure mail settings
+6. Run `php artisan config:cache`
+7. Run `php artisan route:cache`
+8. Run `php artisan view:cache`
+
+### Environment Variables for Production
+```env
+APP_ENV=production
+APP_DEBUG=false
+APP_URL=https://yourdomain.com
+DB_CONNECTION=mysql
+DB_HOST=your-db-host
+DB_DATABASE=your-db-name
+DB_USERNAME=your-db-user
+DB_PASSWORD=your-db-password
+MAIL_MAILER=smtp
+MAIL_HOST=your-smtp-host
+MAIL_USERNAME=your-email
+MAIL_PASSWORD=your-password
+```
 
 ## Contributing
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
 
 ## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+This project is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+## Support
+
+For support, email support@yourdomain.com or create an issue in the repository.
+
+## Changelog
+
+### Version 1.0.0
+- Initial release
+- User authentication with Laravel Breeze
+- Post and category management
+- Comment system
+- Admin panel
+- Responsive design with TailwindCSS
