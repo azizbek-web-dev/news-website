@@ -1,5 +1,6 @@
 <div class="mb-6 flex justify-between items-center">
-    <div class="flex items-center space-x-2">
+    <!-- Layout Selector - Hidden on mobile -->
+    <div class="hidden md:flex items-center space-x-2">
         <span class="text-sm font-medium text-gray-700">Layout:</span>
         <div class="flex space-x-1">
             <!-- Grid Layout -->

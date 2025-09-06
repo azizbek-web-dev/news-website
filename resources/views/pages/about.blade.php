@@ -6,7 +6,7 @@
             </h2>
         </x-slot>
 
-        <div class="py-12">
+        <div class="py-6 sm:py-12">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <!-- Hero Section -->
                 <div class="bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg shadow-xl mb-8">
@@ -243,7 +243,7 @@
     </x-app-layout>
 @else
     <x-guest-layout>
-        <div class="py-12">
+        <div class="py-6 sm:py-12">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <!-- Hero Section -->
                 <div class="bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg shadow-xl mb-8">
