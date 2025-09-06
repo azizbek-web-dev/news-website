@@ -74,6 +74,7 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(fun
     Route::get('/contacts', [AdminController::class, 'contacts'])->name('contacts');
     Route::get('/contacts/{contact}', [AdminController::class, 'showContact'])->name('contacts.show');
     Route::delete('/contacts/{contact}', [AdminController::class, 'deleteContact'])->name('contacts.delete');
+    Route::post('/contacts/bulk', [AdminController::class, 'bulkContactActions'])->name('contacts.bulk');
 });
 
 require __DIR__.'/auth.php';

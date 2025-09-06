@@ -181,9 +181,32 @@ class AdminController extends Controller
     /**
      * Contact Messages Management
      */
-    public function contacts()
+    public function contacts(Request $request)
     {
-        $contacts = Contact::latest()->paginate(10);
+        $query = Contact::query();
+        
+        // Search functionality
+        if ($request->filled('search')) {
+            $search = $request->search;
+            $query->where(function($q) use ($search) {
+                $q->where('name', 'like', "%{$search}%")
+                  ->orWhere('email', 'like', "%{$search}%")
+                  ->orWhere('subject', 'like', "%{$search}%")
+                  ->orWhere('message', 'like', "%{$search}%");
+            });
+        }
+        
+        // Filter by read status
+        if ($request->filled('status')) {
+            if ($request->status === 'read') {
+                $query->where('is_read', true);
+            } elseif ($request->status === 'unread') {
+                $query->where('is_read', false);
+            }
+        }
+        
+        $contacts = $query->latest()->paginate(10);
+        
         return view('admin.contacts.index', compact('contacts'));
     }
 
@@ -197,5 +220,27 @@ class AdminController extends Controller
     {
         $contact->delete();
         return redirect()->route('admin.contacts')->with('success', 'Contact message deleted successfully.');
+    }
+
+    public function bulkContactActions(Request $request)
+    {
+        $request->validate([
+            'contact_ids' => 'required|array',
+            'contact_ids.*' => 'exists:contacts,id',
+            'action' => 'required|in:mark_read,delete'
+        ]);
+
+        $contactIds = $request->contact_ids;
+        $action = $request->action;
+
+        if ($action === 'mark_read') {
+            Contact::whereIn('id', $contactIds)->update(['is_read' => true]);
+            $message = count($contactIds) . ' message(s) marked as read.';
+        } elseif ($action === 'delete') {
+            Contact::whereIn('id', $contactIds)->delete();
+            $message = count($contactIds) . ' message(s) deleted successfully.';
+        }
+
+        return redirect()->route('admin.contacts')->with('success', $message);
     }
 }
