@@ -1,5 +1,5 @@
 <x-admin-layout>
-    <x-slot name="header">Edit Category</x-slot>
+    <x-slot name="header">Edit category</x-slot>
 
     <div class="max-w-md mx-auto">
         <form method="POST" action="{{ route('admin.categories.update', $category) }}" class="space-y-6">
@@ -7,7 +7,7 @@
             @method('PUT')
 
             <div>
-                <label for="name" class="block text-sm font-medium text-gray-700">Category Name</label>
+                <label for="name" class="block text-sm font-medium text-gray-700">Category name</label>
                 <input type="text" name="name" id="name" value="{{ old('name', $category->name) }}" 
                        class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
                 @error('name')
@@ -22,7 +22,7 @@
                 </a>
                 <button type="submit" 
                         class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-                    Update Category
+                    Update category
                 </button>
             </div>
         </form>

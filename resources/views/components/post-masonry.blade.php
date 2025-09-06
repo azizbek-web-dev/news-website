@@ -9,7 +9,7 @@
                      class="w-full h-48 object-cover">
             @else
                 <div class="w-full h-48 bg-gray-200 flex items-center justify-center">
-                    <span class="text-gray-500">No Image</span>
+                    <span class="text-gray-500">No image</span>
                 </div>
             @endif
 
@@ -55,7 +55,7 @@
                 <div class="mt-3">
                     <a href="{{ route('posts.show', $post) }}" 
                        class="text-blue-600 hover:text-blue-800 font-medium text-xs">
-                        Read More →
+                        Read more →
                     </a>
                 </div>
             </div>

@@ -1,5 +1,5 @@
 <x-admin-layout>
-    <x-slot name="header">Edit Post</x-slot>
+    <x-slot name="header">Edit post</x-slot>
 
     <div class="max-w-4xl mx-auto">
         <form method="POST" action="{{ route('admin.posts.update', $post) }}" class="space-y-6">
@@ -47,7 +47,7 @@
                 </a>
                 <button type="submit" 
                         class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-                    Update Post
+                    Update post
                 </button>
             </div>
         </form>

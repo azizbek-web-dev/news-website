@@ -8,7 +8,7 @@
                 @if(auth()->user()->id === 1)
                     <a href="{{ route('categories.create') }}" 
                        class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-                        Create Category
+                        Create category
                     </a>
                 @endif
             </div>
@@ -72,7 +72,7 @@
                                     <div class="mt-4">
                                         <a href="{{ route('categories.show', $category) }}" 
                                            class="text-blue-600 hover:text-blue-800 font-medium text-sm">
-                                            View Posts →
+                                            View posts →
                                         </a>
                                     </div>
                                 </div>
@@ -95,7 +95,7 @@
                         <div class="mt-6">
                             <a href="{{ route('categories.create') }}" 
                                class="inline-flex items-center px-4 py-2 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700">
-                                Create Category
+                                Create category
                             </a>
                         </div>
                     </div>
@@ -143,7 +143,7 @@
                                     <div class="mt-4">
                                         <a href="{{ route('categories.show', $category) }}" 
                                            class="text-blue-600 hover:text-blue-800 font-medium text-sm">
-                                            View Posts →
+                                            View posts →
                                         </a>
                                     </div>
                                 </div>

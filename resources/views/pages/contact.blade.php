@@ -19,14 +19,14 @@
                     <!-- Contact Form -->
                     <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                         <div class="p-6">
-                            <h2 class="text-2xl font-bold text-gray-900 mb-6">Send us a Message</h2>
+                            <h2 class="text-2xl font-bold text-gray-900 mb-6">Send us a message</h2>
                             
                             <form method="POST" action="{{ route('contact.submit') }}">
                                 @csrf
                                 
                                 <div class="mb-4">
                                     <label for="name" class="block text-sm font-medium text-gray-700 mb-2">
-                                        Full Name
+                                        Full name
                                     </label>
                                     <input type="text" 
                                            id="name" 
@@ -41,7 +41,7 @@
 
                                 <div class="mb-4">
                                     <label for="email" class="block text-sm font-medium text-gray-700 mb-2">
-                                        Email Address
+                                        Email address
                                     </label>
                                     <input type="email" 
                                            id="email" 
@@ -85,7 +85,7 @@
 
                                 <button type="submit" 
                                         class="w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
-                                    Send Message
+                                    Send message
                                 </button>
                             </form>
                         </div>
@@ -94,7 +94,7 @@
                     <!-- Contact Information -->
                     <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                         <div class="p-6">
-                            <h2 class="text-2xl font-bold text-gray-900 mb-6">Get in Touch</h2>
+                            <h2 class="text-2xl font-bold text-gray-900 mb-6">Get in touch</h2>
                             
                             <div class="space-y-6">
                                 <div class="flex items-start">
@@ -145,7 +145,7 @@
                                         </svg>
                                     </div>
                                     <div class="ml-3">
-                                        <h3 class="text-lg font-medium text-gray-900">Office Hours</h3>
+                                        <h3 class="text-lg font-medium text-gray-900">Office hours</h3>
                                         <p class="text-gray-600">Monday - Friday: 9:00 AM - 6:00 PM</p>
                                         <p class="text-gray-600">Saturday: 10:00 AM - 4:00 PM</p>
                                         <p class="text-gray-600">Sunday: Closed</p>
@@ -154,7 +154,7 @@
                             </div>
 
                             <div class="mt-8">
-                                <h3 class="text-lg font-medium text-gray-900 mb-4">Follow Us</h3>
+                                <h3 class="text-lg font-medium text-gray-900 mb-4">Follow us</h3>
                                 <div class="flex space-x-4">
                                     <a href="#" class="text-gray-400 hover:text-blue-500">
                                         <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
@@ -194,14 +194,14 @@
                     <!-- Contact Form -->
                     <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                         <div class="p-6">
-                            <h2 class="text-2xl font-bold text-gray-900 mb-6">Send us a Message</h2>
+                            <h2 class="text-2xl font-bold text-gray-900 mb-6">Send us a message</h2>
                             
                             <form method="POST" action="{{ route('contact.submit') }}">
                                 @csrf
                                 
                                 <div class="mb-4">
                                     <label for="name" class="block text-sm font-medium text-gray-700 mb-2">
-                                        Full Name
+                                        Full name
                                     </label>
                                     <input type="text" 
                                            id="name" 
@@ -216,7 +216,7 @@
 
                                 <div class="mb-4">
                                     <label for="email" class="block text-sm font-medium text-gray-700 mb-2">
-                                        Email Address
+                                        Email address
                                     </label>
                                     <input type="email" 
                                            id="email" 
@@ -260,7 +260,7 @@
 
                                 <button type="submit" 
                                         class="w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
-                                    Send Message
+                                    Send message
                                 </button>
                             </form>
                         </div>
@@ -269,7 +269,7 @@
                     <!-- Contact Information -->
                     <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                         <div class="p-6">
-                            <h2 class="text-2xl font-bold text-gray-900 mb-6">Get in Touch</h2>
+                            <h2 class="text-2xl font-bold text-gray-900 mb-6">Get in touch</h2>
                             
                             <div class="space-y-6">
                                 <div class="flex items-start">
@@ -320,7 +320,7 @@
                                         </svg>
                                     </div>
                                     <div class="ml-3">
-                                        <h3 class="text-lg font-medium text-gray-900">Office Hours</h3>
+                                        <h3 class="text-lg font-medium text-gray-900">Office hours</h3>
                                         <p class="text-gray-600">Monday - Friday: 9:00 AM - 6:00 PM</p>
                                         <p class="text-gray-600">Saturday: 10:00 AM - 4:00 PM</p>
                                         <p class="text-gray-600">Sunday: Closed</p>
@@ -329,7 +329,7 @@
                             </div>
 
                             <div class="mt-8">
-                                <h3 class="text-lg font-medium text-gray-900 mb-4">Follow Us</h3>
+                                <h3 class="text-lg font-medium text-gray-900 mb-4">Follow us</h3>
                                 <div class="flex space-x-4">
                                     <a href="#" class="text-gray-400 hover:text-blue-500">
                                         <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">

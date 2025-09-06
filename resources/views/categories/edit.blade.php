@@ -3,7 +3,7 @@
         <x-slot name="header">
             <div class="flex justify-between items-center">
                 <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-                    Edit Category
+                    Edit category
                 </h2>
             </div>
         </x-slot>
@@ -37,7 +37,7 @@
                             
                             <div class="mb-6">
                                 <label for="name" class="block text-sm font-medium text-gray-700 mb-2">
-                                    Category Name
+                                    Category name
                                 </label>
                                 <input type="text" 
                                        id="name" 
@@ -54,7 +54,7 @@
                                 </a>
                                 <button type="submit" 
                                         class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-                                    Update Category
+                                    Update category
                                 </button>
                             </div>
                         </form>
@@ -68,7 +68,7 @@
         <div class="py-12">
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
                 <div class="text-center">
-                    <h1 class="text-2xl font-bold text-gray-900 mb-4">Access Denied</h1>
+                    <h1 class="text-2xl font-bold text-gray-900 mb-4">Access denied</h1>
                     <p class="text-gray-600 mb-6">You need to be logged in to edit categories.</p>
                     <a href="{{ route('login') }}" 
                        class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">

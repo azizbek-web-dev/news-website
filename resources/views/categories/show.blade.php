@@ -8,7 +8,7 @@
                 @if(auth()->user()->id === 1)
                     <a href="{{ route('categories.edit', $category) }}" 
                        class="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded">
-                        Edit Category
+                        Edit category
                     </a>
                 @endif
             </div>
@@ -43,7 +43,7 @@
                                          class="w-full h-48 object-cover">
                                 @else
                                     <div class="w-full h-48 bg-gray-200 flex items-center justify-center">
-                                        <span class="text-gray-500">No Image</span>
+                                        <span class="text-gray-500">No image</span>
                                     </div>
                                 @endif
 
@@ -82,7 +82,7 @@
                                     <div class="mt-4">
                                         <a href="{{ route('posts.show', $post) }}" 
                                            class="text-blue-600 hover:text-blue-800 font-medium text-sm">
-                                            Read More →
+                                            Read more →
                                         </a>
                                     </div>
                                 </div>
@@ -105,7 +105,7 @@
                         <div class="mt-6">
                             <a href="{{ route('posts.create') }}" 
                                class="inline-flex items-center px-4 py-2 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700">
-                                Create Post
+                                Create post
                             </a>
                         </div>
                     </div>
@@ -144,7 +144,7 @@
                                          class="w-full h-48 object-cover">
                                 @else
                                     <div class="w-full h-48 bg-gray-200 flex items-center justify-center">
-                                        <span class="text-gray-500">No Image</span>
+                                        <span class="text-gray-500">No image</span>
                                     </div>
                                 @endif
 
@@ -183,7 +183,7 @@
                                     <div class="mt-4">
                                         <a href="{{ route('posts.show', $post) }}" 
                                            class="text-blue-600 hover:text-blue-800 font-medium text-sm">
-                                            Read More →
+                                            Read more →
                                         </a>
                                     </div>
                                 </div>

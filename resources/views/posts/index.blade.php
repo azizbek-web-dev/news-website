@@ -20,7 +20,7 @@
                     <div class="mb-6">
                         <a href="{{ route('posts.create') }}" 
                            class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-                            Create New Post
+                            Create new post
                         </a>
                     </div>
                 @endif
@@ -60,7 +60,7 @@
                             <div class="mt-6">
                                 <a href="{{ route('posts.create') }}" 
                                    class="inline-flex items-center px-4 py-2 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700">
-                                    Create Post
+                                    Create post
                                 </a>
                             </div>
                         @endif

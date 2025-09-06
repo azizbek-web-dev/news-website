@@ -13,7 +13,7 @@
                     </div>
                     <div class="ml-5 w-0 flex-1">
                         <dl>
-                            <dt class="text-sm font-medium text-gray-500 truncate">Total Users</dt>
+                            <dt class="text-sm font-medium text-gray-500 truncate">Total users</dt>
                             <dd class="text-lg font-medium text-gray-900">{{ $stats['users'] }}</dd>
                         </dl>
                     </div>
@@ -31,7 +31,7 @@
                     </div>
                     <div class="ml-5 w-0 flex-1">
                         <dl>
-                            <dt class="text-sm font-medium text-gray-500 truncate">Total Posts</dt>
+                            <dt class="text-sm font-medium text-gray-500 truncate">Total posts</dt>
                             <dd class="text-lg font-medium text-gray-900">{{ $stats['posts'] }}</dd>
                         </dl>
                     </div>
@@ -81,7 +81,7 @@
         <!-- Recent Posts -->
         <div class="bg-white shadow rounded-lg">
             <div class="px-4 py-5 sm:p-6">
-                <h3 class="text-lg leading-6 font-medium text-gray-900 mb-4">Recent Posts</h3>
+                <h3 class="text-lg leading-6 font-medium text-gray-900 mb-4">Recent posts</h3>
                 <div class="flow-root">
                     <ul class="-my-5 divide-y divide-gray-200">
                         @forelse($recentPosts as $post)
@@ -120,7 +120,7 @@
         <!-- Recent Comments -->
         <div class="bg-white shadow rounded-lg">
             <div class="px-4 py-5 sm:p-6">
-                <h3 class="text-lg leading-6 font-medium text-gray-900 mb-4">Recent Comments</h3>
+                <h3 class="text-lg leading-6 font-medium text-gray-900 mb-4">Recent comments</h3>
                 <div class="flow-root">
                     <ul class="-my-5 divide-y divide-gray-200">
                         @forelse($recentComments as $comment)

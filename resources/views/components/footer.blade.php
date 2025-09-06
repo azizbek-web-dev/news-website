@@ -3,7 +3,7 @@
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
             <!-- About Section -->
             <div>
-                <h3 class="text-lg font-semibold mb-4">About News Website</h3>
+                <h3 class="text-lg font-semibold mb-4">About news website</h3>
                 <p class="text-gray-300 text-sm">
                     Your trusted source for the latest news and updates. Stay informed with our comprehensive coverage of current events.
                 </p>
@@ -11,9 +11,9 @@
 
             <!-- Quick Links -->
             <div>
-                <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                <h3 class="text-lg font-semibold mb-4">Quick links</h3>
                 <ul class="space-y-2">
-                    <li><a href="{{ route('posts.index') }}" class="text-gray-300 hover:text-white text-sm">Latest Posts</a></li>
+                    <li><a href="{{ route('posts.index') }}" class="text-gray-300 hover:text-white text-sm">Latest posts</a></li>
                     <li><a href="{{ route('categories.index') }}" class="text-gray-300 hover:text-white text-sm">Categories</a></li>
                     @auth
                         <li><a href="{{ route('dashboard') }}" class="text-gray-300 hover:text-white text-sm">Dashboard</a></li>
@@ -38,7 +38,7 @@
         <!-- Bottom Bar -->
         <div class="border-t border-gray-700 mt-8 pt-8 text-center">
             <p class="text-gray-400 text-sm">
-                &copy; {{ date('Y') }} News Website. All rights reserved.
+                &copy; {{ date('Y') }} News website. All rights reserved.
             </p>
         </div>
     </div>
