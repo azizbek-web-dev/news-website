@@ -5,10 +5,12 @@
                 <h2 class="font-semibold text-xl text-gray-800 leading-tight">
                     {{ __('Categories') }}
                 </h2>
-                <a href="{{ route('categories.create') }}" 
-                   class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-                    Create Category
-                </a>
+                @if(auth()->user()->id === 1)
+                    <a href="{{ route('categories.create') }}" 
+                       class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                        Create Category
+                    </a>
+                @endif
             </div>
         </x-slot>
 
@@ -46,23 +48,25 @@
                                         {{ $category->posts_count }} {{ Str::plural('post', $category->posts_count) }}
                                     </p>
 
-                                    <!-- Actions (for authenticated users) -->
-                                    <div class="flex space-x-2">
-                                        <a href="{{ route('categories.edit', $category) }}" 
-                                           class="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-1 px-3 rounded text-sm">
-                                            Edit
-                                        </a>
-                                        <form method="POST" action="{{ route('categories.destroy', $category) }}" 
-                                              onsubmit="return confirm('Are you sure you want to delete this category?')" 
-                                              class="inline">
-                                            @csrf
-                                            @method('DELETE')
-                                            <button type="submit" 
-                                                    class="bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-3 rounded text-sm">
-                                                Delete
-                                            </button>
-                                        </form>
-                                    </div>
+                                    <!-- Actions (for admin only) -->
+                                    @if(auth()->user()->id === 1)
+                                        <div class="flex space-x-2">
+                                            <a href="{{ route('categories.edit', $category) }}" 
+                                               class="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-1 px-3 rounded text-sm">
+                                                Edit
+                                            </a>
+                                            <form method="POST" action="{{ route('categories.destroy', $category) }}" 
+                                                  onsubmit="return confirm('Are you sure you want to delete this category?')" 
+                                                  class="inline">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="submit" 
+                                                        class="bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-3 rounded text-sm">
+                                                    Delete
+                                                </button>
+                                            </form>
+                                        </div>
+                                    @endif
 
                                     <!-- View Posts Link -->
                                     <div class="mt-4">

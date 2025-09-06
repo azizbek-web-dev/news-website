@@ -28,6 +28,7 @@ class PostController extends Controller
      */
     public function create()
     {
+        $this->authorize('create', Post::class);
         $categories = Category::all();
         return view('posts.create', compact('categories'));
     }
@@ -37,6 +38,8 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
+        $this->authorize('create', Post::class);
+        
         $request->validate([
             'title' => 'required|string|max:255',
             'content' => 'required|string',

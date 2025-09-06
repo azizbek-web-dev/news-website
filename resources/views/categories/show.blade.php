@@ -5,10 +5,12 @@
                 <h2 class="font-semibold text-xl text-gray-800 leading-tight">
                     {{ $category->name }} Posts
                 </h2>
-                <a href="{{ route('categories.edit', $category) }}" 
-                   class="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded">
-                    Edit Category
-                </a>
+                @if(auth()->user()->id === 1)
+                    <a href="{{ route('categories.edit', $category) }}" 
+                       class="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded">
+                        Edit Category
+                    </a>
+                @endif
             </div>
         </x-slot>
 

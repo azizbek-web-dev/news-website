@@ -27,6 +27,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
+        $this->authorize('create', Category::class);
         return view('categories.create');
     }
 
@@ -35,6 +36,8 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
+        $this->authorize('create', Category::class);
+        
         $request->validate([
             'name' => 'required|string|max:255|unique:categories,name'
         ]);
@@ -61,6 +64,7 @@ class CategoryController extends Controller
      */
     public function edit(Category $category)
     {
+        $this->authorize('update', $category);
         return view('categories.edit', compact('category'));
     }
 
@@ -69,6 +73,8 @@ class CategoryController extends Controller
      */
     public function update(Request $request, Category $category)
     {
+        $this->authorize('update', $category);
+        
         $request->validate([
             'name' => 'required|string|max:255|unique:categories,name,' . $category->id
         ]);
@@ -86,6 +92,8 @@ class CategoryController extends Controller
      */
     public function destroy(Category $category)
     {
+        $this->authorize('delete', $category);
+        
         if ($category->posts()->count() > 0) {
             return redirect()->route('categories.index')->with('error', 'Cannot delete category with posts.');
         }
