@@ -23,7 +23,7 @@
                                     <p class="text-xs text-gray-500">
                                         On post: <a href="{{ route('posts.show', $comment->post) }}" 
                                                    class="text-blue-600 hover:text-blue-800">
-                                            {{ Str::limit($comment->post->title, 50) }}
+                                            {{ Str::limit(Str::title($comment->post->title), 50) }}
                                         </a>
                                     </p>
                                 </div>

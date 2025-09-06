@@ -18,7 +18,7 @@
                 <!-- Category Badge -->
                 <div class="mb-2">
                     <span class="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full">
-                        {{ $post->category->name }}
+                        {{ Str::title($post->category->name) }}
                     </span>
                 </div>
 
@@ -26,7 +26,7 @@
                 <h3 class="text-lg font-semibold text-gray-900 mb-2">
                     <a href="{{ route('posts.show', $post) }}" 
                        class="hover:text-blue-600 transition-colors duration-200">
-                        {{ $post->title }}
+                        {{ Str::title($post->title) }}
                     </a>
                 </h3>
 

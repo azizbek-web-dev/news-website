@@ -89,7 +89,7 @@
                                 <div class="flex items-center space-x-4">
                                     <div class="flex-1 min-w-0">
                                         <p class="text-sm font-medium text-gray-900 truncate">
-                                            {{ $post->title }}
+                                            {{ Str::title($post->title) }}
                                         </p>
                                         <p class="text-sm text-gray-500">
                                             by {{ $post->user->name }} • {{ $post->created_at->diffForHumans() }}
@@ -97,7 +97,7 @@
                                     </div>
                                     <div>
                                         <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
-                                            {{ $post->category->name }}
+                                            {{ Str::title($post->category->name) }}
                                         </span>
                                     </div>
                                 </div>

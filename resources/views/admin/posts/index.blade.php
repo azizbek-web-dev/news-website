@@ -14,11 +14,11 @@
                             <div class="flex-1">
                                 <div class="flex items-center justify-between">
                                     <p class="text-sm font-medium text-blue-600 truncate">
-                                        {{ $post->title }}
+                                        {{ Str::title($post->title) }}
                                     </p>
                                     <div class="ml-2 flex-shrink-0 flex">
                                         <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-blue-100 text-blue-800">
-                                            {{ $post->category->name }}
+                                            {{ Str::title($post->category->name) }}
                                         </span>
                                     </div>
                                 </div>

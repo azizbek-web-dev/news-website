@@ -19,7 +19,7 @@
                     <div class="px-4 py-4 flex items-center justify-between">
                         <div class="flex-1">
                             <div class="flex items-center justify-between">
-                                <p class="text-sm font-medium text-gray-900">{{ $category->name }}</p>
+                                <p class="text-sm font-medium text-gray-900">{{ Str::title($category->name) }}</p>
                                 <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-gray-100 text-gray-800">
                                     {{ $category->posts_count }} posts
                                 </span>

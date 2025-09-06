@@ -3,7 +3,7 @@
         <x-slot name="header">
             <div class="flex justify-between items-center">
                 <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-                    {{ $post->title }}
+                    {{ Str::title($post->title) }}
                 </h2>
                 @can('update', $post)
                     <div class="flex space-x-2">
@@ -39,7 +39,7 @@
                     <!-- Post Image -->
                     @if($post->image)
                         <img src="{{ asset('storage/' . $post->image) }}" 
-                             alt="{{ $post->title }}" 
+                             alt="{{ Str::title($post->title) }}" 
                              class="w-full h-64 md:h-96 object-cover">
                     @endif
 
@@ -49,7 +49,7 @@
                         <div class="flex items-center justify-between mb-4">
                             <div class="flex items-center space-x-4">
                                 <span class="inline-block bg-blue-100 text-blue-800 text-sm px-3 py-1 rounded-full">
-                                    {{ $post->category->name }}
+                                    {{ Str::title($post->category->name) }}
                                 </span>
                                 <div class="flex items-center text-sm text-gray-500">
                                     <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
@@ -68,7 +68,7 @@
 
                         <!-- Post Title -->
                         <h1 class="text-3xl font-bold text-gray-900 mb-6">
-                            {{ $post->title }}
+                            {{ Str::title($post->title) }}
                         </h1>
 
                         <!-- Post Content -->
@@ -150,7 +150,7 @@
                     <!-- Post Image -->
                     @if($post->image)
                         <img src="{{ asset('storage/' . $post->image) }}" 
-                             alt="{{ $post->title }}" 
+                             alt="{{ Str::title($post->title) }}" 
                              class="w-full h-64 md:h-96 object-cover">
                     @endif
 
@@ -160,7 +160,7 @@
                         <div class="flex items-center justify-between mb-4">
                             <div class="flex items-center space-x-4">
                                 <span class="inline-block bg-blue-100 text-blue-800 text-sm px-3 py-1 rounded-full">
-                                    {{ $post->category->name }}
+                                    {{ Str::title($post->category->name) }}
                                 </span>
                                 <div class="flex items-center text-sm text-gray-500">
                                     <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
@@ -179,7 +179,7 @@
 
                         <!-- Post Title -->
                         <h1 class="text-3xl font-bold text-gray-900 mb-6">
-                            {{ $post->title }}
+                            {{ Str::title($post->title) }}
                         </h1>
 
                         <!-- Post Content -->

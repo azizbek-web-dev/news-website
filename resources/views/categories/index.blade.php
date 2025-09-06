@@ -39,7 +39,7 @@
                                     <h3 class="text-xl font-semibold text-gray-900 mb-2">
                                         <a href="{{ route('categories.show', $category) }}" 
                                            class="hover:text-blue-600 transition-colors duration-200">
-                                            {{ $category->name }}
+                                            {{ Str::title($category->name) }}
                                         </a>
                                     </h3>
 
@@ -130,7 +130,7 @@
                                     <h3 class="text-xl font-semibold text-gray-900 mb-2">
                                         <a href="{{ route('categories.show', $category) }}" 
                                            class="hover:text-blue-600 transition-colors duration-200">
-                                            {{ $category->name }}
+                                            {{ Str::title($category->name) }}
                                         </a>
                                     </h3>
 

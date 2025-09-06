@@ -3,7 +3,7 @@
         <x-slot name="header">
             <div class="flex justify-between items-center">
                 <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-                    {{ $category->name }} Posts
+                    {{ Str::title($category->name) }} Posts
                 </h2>
                 @if(auth()->user()->id === 1)
                     <a href="{{ route('categories.edit', $category) }}" 
@@ -26,7 +26,7 @@
                 <!-- Category Info -->
                 <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg mb-6">
                     <div class="p-6">
-                        <h1 class="text-3xl font-bold text-gray-900 mb-2">{{ $category->name }}</h1>
+                        <h1 class="text-3xl font-bold text-gray-900 mb-2">{{ Str::title($category->name) }}</h1>
                         <p class="text-gray-600">{{ $posts->total() }} {{ Str::plural('post', $posts->total()) }} in this category</p>
                     </div>
                 </div>
@@ -39,7 +39,7 @@
                                 <!-- Post Image -->
                                 @if($post->image)
                                     <img src="{{ asset('storage/' . $post->image) }}" 
-                                         alt="{{ $post->title }}" 
+                                         alt="{{ Str::title($post->title) }}" 
                                          class="w-full h-48 object-cover">
                                 @else
                                     <div class="w-full h-48 bg-gray-200 flex items-center justify-center">
@@ -53,7 +53,7 @@
                                     <h3 class="text-xl font-semibold text-gray-900 mb-2">
                                         <a href="{{ route('posts.show', $post) }}" 
                                            class="hover:text-blue-600 transition-colors duration-200">
-                                            {{ $post->title }}
+                                            {{ Str::title($post->title) }}
                                         </a>
                                     </h3>
 
@@ -127,7 +127,7 @@
                 <!-- Category Info -->
                 <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg mb-6">
                     <div class="p-6">
-                        <h1 class="text-3xl font-bold text-gray-900 mb-2">{{ $category->name }}</h1>
+                        <h1 class="text-3xl font-bold text-gray-900 mb-2">{{ Str::title($category->name) }}</h1>
                         <p class="text-gray-600">{{ $posts->total() }} {{ Str::plural('post', $posts->total()) }} in this category</p>
                     </div>
                 </div>
@@ -140,7 +140,7 @@
                                 <!-- Post Image -->
                                 @if($post->image)
                                     <img src="{{ asset('storage/' . $post->image) }}" 
-                                         alt="{{ $post->title }}" 
+                                         alt="{{ Str::title($post->title) }}" 
                                          class="w-full h-48 object-cover">
                                 @else
                                     <div class="w-full h-48 bg-gray-200 flex items-center justify-center">
@@ -154,7 +154,7 @@
                                     <h3 class="text-xl font-semibold text-gray-900 mb-2">
                                         <a href="{{ route('posts.show', $post) }}" 
                                            class="hover:text-blue-600 transition-colors duration-200">
-                                            {{ $post->title }}
+                                            {{ Str::title($post->title) }}
                                         </a>
                                     </h3>
 
