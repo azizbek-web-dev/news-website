@@ -57,6 +57,9 @@ cd news-website
 # Install PHP dependencies
 composer install
 
+# If composer is not installed or you have an old version, use composer.phar:
+# php composer.phar install
+
 # Install Node.js dependencies
 npm install
 ```
@@ -254,6 +257,25 @@ php artisan test
 # Seed with sample data
 php artisan db:seed
 ```
+
+## Hosting Deployment
+
+### Using composer.phar on Hosting
+
+If your hosting provider has an old version of Composer or doesn't have Composer installed, you can use the included `composer.phar` file:
+
+```bash
+# Instead of: composer install
+# Use: php composer.phar install
+
+# Instead of: composer update
+# Use: php composer.phar update
+
+# Instead of: composer dump-autoload
+# Use: php composer.phar dump-autoload
+```
+
+The `composer.phar` file is included in the repository and contains the latest Composer version, so it will work on any hosting provider with PHP support.
 
 ## Deployment
 
