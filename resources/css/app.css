@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Body styles */
+body {
+    max-width: 1140px;
+    margin: auto;
+}
+
 /* Custom styles for dynamic layouts */
 .line-clamp-2 {
     display: -webkit-box;
