@@ -17,10 +17,12 @@ class PostController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
         $posts = Post::with(['category', 'user'])->latest()->paginate(9);
-        return view('posts.index', compact('posts'));
+        $layout = $request->get('layout', 'grid'); // Default to grid layout
+        
+        return view('posts.index', compact('posts', 'layout'));
     }
 
     /**

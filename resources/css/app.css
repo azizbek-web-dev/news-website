@@ -1,3 +1,58 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Custom styles for dynamic layouts */
+.line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* Masonry layout styles */
+.columns-1 {
+    column-count: 1;
+}
+
+@media (min-width: 768px) {
+    .md\:columns-2 {
+        column-count: 2;
+    }
+}
+
+@media (min-width: 1024px) {
+    .lg\:columns-3 {
+        column-count: 3;
+    }
+}
+
+@media (min-width: 1280px) {
+    .xl\:columns-4 {
+        column-count: 4;
+    }
+}
+
+.break-inside-avoid {
+    break-inside: avoid;
+}
+
+/* Layout selector styles */
+.layout-btn {
+    transition: all 0.2s ease-in-out;
+}
+
+.layout-btn:hover {
+    transform: translateY(-1px);
+}
+
+.layout-btn.active {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
