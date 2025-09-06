@@ -19,6 +19,14 @@
                        class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium leading-5 text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300 transition duration-150 ease-in-out {{ request()->routeIs('categories.*') ? 'border-indigo-400 text-gray-900' : '' }}">
                         Categories
                     </a>
+                    <a href="{{ route('about') }}" 
+                       class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium leading-5 text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300 transition duration-150 ease-in-out {{ request()->routeIs('about') ? 'border-indigo-400 text-gray-900' : '' }}">
+                        About
+                    </a>
+                    <a href="{{ route('contact') }}" 
+                       class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium leading-5 text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300 transition duration-150 ease-in-out {{ request()->routeIs('contact') ? 'border-indigo-400 text-gray-900' : '' }}">
+                        Contact
+                    </a>
                 </div>
             </div>
 
@@ -56,6 +64,14 @@
             <a href="{{ route('categories.index') }}" 
                class="block pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium text-gray-500 hover:text-gray-700 hover:bg-gray-50 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:bg-gray-50 focus:border-gray-300 transition duration-150 ease-in-out {{ request()->routeIs('categories.*') ? 'border-indigo-400 text-indigo-700 bg-indigo-50' : '' }}">
                 Categories
+            </a>
+            <a href="{{ route('about') }}" 
+               class="block pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium text-gray-500 hover:text-gray-700 hover:bg-gray-50 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:bg-gray-50 focus:border-gray-300 transition duration-150 ease-in-out {{ request()->routeIs('about') ? 'border-indigo-400 text-indigo-700 bg-indigo-50' : '' }}">
+                About
+            </a>
+            <a href="{{ route('contact') }}" 
+               class="block pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium text-gray-500 hover:text-gray-700 hover:bg-gray-50 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:bg-gray-50 focus:border-gray-300 transition duration-150 ease-in-out {{ request()->routeIs('contact') ? 'border-indigo-400 text-indigo-700 bg-indigo-50' : '' }}">
+                Contact
             </a>
         </div>
         <div class="pt-4 pb-1 border-t border-gray-200">
