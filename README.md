@@ -62,6 +62,9 @@ composer install
 
 # Install Node.js dependencies
 npm install
+
+# Build frontend assets
+npm run build
 ```
 
 ### 3. Environment Setup
@@ -276,6 +279,18 @@ If your hosting provider has an old version of Composer or doesn't have Composer
 ```
 
 The `composer.phar` file is included in the repository and contains the latest Composer version, so it will work on any hosting provider with PHP support.
+
+### Frontend Assets
+
+The frontend assets are pre-built and included in the repository (`public/build/` directory). If you need to rebuild them:
+
+```bash
+# Install Node.js dependencies
+npm install
+
+# Build for production
+npm run build
+```
 
 ## Deployment
 
