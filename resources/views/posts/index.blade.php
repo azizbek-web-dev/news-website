@@ -7,7 +7,7 @@
         </x-slot>
 
         <div class="py-12">
-            <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+            <div class="max-w-full mx-auto sm:px-6 lg:px-8">
                 <!-- Success Message -->
                 @if (session('success'))
                     <div class="mb-6 bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded">
@@ -25,7 +25,7 @@
 
                 <!-- Posts Grid -->
                 @if($posts->count() > 0)
-                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
                         @foreach($posts as $post)
                             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg hover:shadow-lg transition-shadow duration-300">
                                 <!-- Post Image -->
@@ -115,7 +115,7 @@
 @else
     <x-guest-layout>
         <div class="py-12">
-            <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+            <div class="max-w-full mx-auto sm:px-6 lg:px-8">
                 <!-- Success Message -->
                 @if (session('success'))
                     <div class="mb-6 bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded">
@@ -125,7 +125,7 @@
 
                 <!-- Posts Grid -->
                 @if($posts->count() > 0)
-                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
                         @foreach($posts as $post)
                             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg hover:shadow-lg transition-shadow duration-300">
                                 <!-- Post Image -->
