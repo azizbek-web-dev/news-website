@@ -1,4 +1,4 @@
-<nav x-data="{ open: false }" class="bg-white border-b border-gray-100">
+<nav x-data="{ open: false }" x-init="console.log('Alpine.js loaded')" class="bg-white border-b border-gray-100">
     <!-- Primary Navigation Menu -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16">
@@ -73,7 +73,7 @@
 
             <!-- Hamburger -->
             <div class="-me-2 flex items-center sm:hidden">
-                <button @click="open = !open" 
+                <button @click="open = !open; console.log('Button clicked, open:', open)" 
                         class="mobile-nav-button inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out"
                         type="button"
                         aria-controls="mobile-menu"
@@ -91,10 +91,10 @@
     </div>
 
     <!-- Responsive Navigation Menu -->
-    <div x-show="open" 
+    <div :class="{'block': open, 'hidden': !open}" 
          x-transition
          id="mobile-menu"
-         class="mobile-nav-menu hidden sm:hidden">
+         class="mobile-nav-menu sm:hidden">
         <div class="pt-2 pb-3 space-y-1">
             <x-responsive-nav-link :href="route('posts.index')" :active="request()->routeIs('posts.*')">
                 {{ __('Posts') }}
