@@ -76,8 +76,16 @@
         </nav>
 
         <!-- Page Content -->
-        <main>
-            {{ $slot }}
+        <main class="py-12">
+            <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+                @isset($header)
+                    <div class="mb-8">
+                        <h1 class="text-2xl font-bold text-gray-900">{{ $header }}</h1>
+                    </div>
+                @endisset
+                
+                {{ $slot }}
+            </div>
         </main>
 
         <!-- Footer -->
