@@ -18,7 +18,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $categories = Category::withCount('posts')->paginate(10);
+        $categories = Category::withCount('posts')->paginate(9);
         return view('categories.index', compact('categories'));
     }
 
@@ -55,7 +55,7 @@ class CategoryController extends Controller
      */
     public function show(Category $category)
     {
-        $posts = $category->posts()->with('user')->latest()->paginate(10);
+        $posts = $category->posts()->with('user')->latest()->paginate(9);
         return view('categories.show', compact('category', 'posts'));
     }
 
