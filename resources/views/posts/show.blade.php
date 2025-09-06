@@ -1,14 +1,10 @@
 @auth
     <x-app-layout>
-@else
-    <x-guest-layout>
-@endauth
-    <x-slot name="header">
-        <div class="flex justify-between items-center">
-            <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-                {{ $post->title }}
-            </h2>
-            @auth
+        <x-slot name="header">
+            <div class="flex justify-between items-center">
+                <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+                    {{ $post->title }}
+                </h2>
                 @can('update', $post)
                     <div class="flex space-x-2">
                         <a href="{{ route('posts.edit', $post) }}" 
@@ -27,88 +23,86 @@
                         </form>
                     </div>
                 @endcan
-            @endauth
-        </div>
-    </x-slot>
+            </div>
+        </x-slot>
 
-    <div class="py-12">
-        <div class="max-w-4xl mx-auto sm:px-6 lg:px-8">
-            <!-- Success Message -->
-            @if (session('success'))
-                <div class="mb-6 bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded">
-                    {{ session('success') }}
-                </div>
-            @endif
-
-            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                <!-- Post Image -->
-                @if($post->image)
-                    <img src="{{ asset('storage/' . $post->image) }}" 
-                         alt="{{ $post->title }}" 
-                         class="w-full h-64 md:h-96 object-cover">
+        <div class="py-12">
+            <div class="max-w-4xl mx-auto sm:px-6 lg:px-8">
+                <!-- Success Message -->
+                @if (session('success'))
+                    <div class="mb-6 bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded">
+                        {{ session('success') }}
+                    </div>
                 @endif
 
-                <!-- Post Content -->
-                <div class="p-6">
-                    <!-- Category and Meta -->
-                    <div class="flex items-center justify-between mb-4">
-                        <div class="flex items-center space-x-4">
-                            <span class="inline-block bg-blue-100 text-blue-800 text-sm px-3 py-1 rounded-full">
-                                {{ $post->category->name }}
-                            </span>
-                            <div class="flex items-center text-sm text-gray-500">
-                                <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
-                                    <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path>
-                                </svg>
-                                {{ $post->user->name }}
-                            </div>
-                            <div class="flex items-center text-sm text-gray-500">
-                                <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
-                                    <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"></path>
-                                </svg>
-                                {{ $post->created_at->format('F d, Y') }}
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Post Title -->
-                    <h1 class="text-3xl font-bold text-gray-900 mb-6">
-                        {{ $post->title }}
-                    </h1>
+                <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+                    <!-- Post Image -->
+                    @if($post->image)
+                        <img src="{{ asset('storage/' . $post->image) }}" 
+                             alt="{{ $post->title }}" 
+                             class="w-full h-64 md:h-96 object-cover">
+                    @endif
 
                     <!-- Post Content -->
-                    <div class="prose max-w-none">
-                        {!! nl2br(e($post->content)) !!}
-                    </div>
-
-                    <!-- Comments Section -->
-                    <div class="mt-12 border-t pt-8">
-                        <h3 class="text-xl font-semibold text-gray-900 mb-6">
-                            Comments ({{ $post->comments->count() }})
-                        </h3>
-
-                        @if($post->comments->count() > 0)
-                            <div class="space-y-4">
-                                @foreach($post->comments as $comment)
-                                    <div class="bg-gray-50 p-4 rounded-lg">
-                                        <div class="flex items-center justify-between mb-2">
-                                            <div class="font-medium text-gray-900">
-                                                {{ $comment->user->name }}
-                                            </div>
-                                            <div class="text-sm text-gray-500">
-                                                {{ $comment->created_at->format('M d, Y g:i A') }}
-                                            </div>
-                                        </div>
-                                        <p class="text-gray-700">{{ $comment->content }}</p>
-                                    </div>
-                                @endforeach
+                    <div class="p-6">
+                        <!-- Category and Meta -->
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="flex items-center space-x-4">
+                                <span class="inline-block bg-blue-100 text-blue-800 text-sm px-3 py-1 rounded-full">
+                                    {{ $post->category->name }}
+                                </span>
+                                <div class="flex items-center text-sm text-gray-500">
+                                    <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path>
+                                    </svg>
+                                    {{ $post->user->name }}
+                                </div>
+                                <div class="flex items-center text-sm text-gray-500">
+                                    <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"></path>
+                                    </svg>
+                                    {{ $post->created_at->format('F d, Y') }}
+                                </div>
                             </div>
-                        @else
-                            <p class="text-gray-500 italic">No comments yet. Be the first to comment!</p>
-                        @endif
+                        </div>
 
-                        <!-- Add Comment Form (for authenticated users) -->
-                        @auth
+                        <!-- Post Title -->
+                        <h1 class="text-3xl font-bold text-gray-900 mb-6">
+                            {{ $post->title }}
+                        </h1>
+
+                        <!-- Post Content -->
+                        <div class="prose max-w-none">
+                            {!! nl2br(e($post->content)) !!}
+                        </div>
+
+                        <!-- Comments Section -->
+                        <div class="mt-12 border-t pt-8">
+                            <h3 class="text-xl font-semibold text-gray-900 mb-6">
+                                Comments ({{ $post->comments->count() }})
+                            </h3>
+
+                            @if($post->comments->count() > 0)
+                                <div class="space-y-4">
+                                    @foreach($post->comments as $comment)
+                                        <div class="bg-gray-50 p-4 rounded-lg">
+                                            <div class="flex items-center justify-between mb-2">
+                                                <div class="font-medium text-gray-900">
+                                                    {{ $comment->user->name }}
+                                                </div>
+                                                <div class="text-sm text-gray-500">
+                                                    {{ $comment->created_at->format('M d, Y g:i A') }}
+                                                </div>
+                                            </div>
+                                            <p class="text-gray-700">{{ $comment->content }}</p>
+                                        </div>
+                                    @endforeach
+                                </div>
+                            @else
+                                <p class="text-gray-500 italic">No comments yet. Be the first to comment!</p>
+                            @endif
+
+                            <!-- Add Comment Form (for authenticated users) -->
                             <div class="mt-8">
                                 <form method="POST" action="{{ route('comments.store') }}" class="space-y-4">
                                     @csrf
@@ -135,18 +129,98 @@
                                     </div>
                                 </form>
                             </div>
-                        @else
-                            <div class="mt-8 text-center">
-                                <p class="text-gray-500 mb-4">Please <a href="{{ route('login') }}" class="text-blue-600 hover:text-blue-800">login</a> to comment.</p>
-                            </div>
-                        @endauth
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-@auth
     </x-app-layout>
 @else
+    <x-guest-layout>
+        <div class="py-12">
+            <div class="max-w-4xl mx-auto sm:px-6 lg:px-8">
+                <!-- Success Message -->
+                @if (session('success'))
+                    <div class="mb-6 bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded">
+                        {{ session('success') }}
+                    </div>
+                @endif
+
+                <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+                    <!-- Post Image -->
+                    @if($post->image)
+                        <img src="{{ asset('storage/' . $post->image) }}" 
+                             alt="{{ $post->title }}" 
+                             class="w-full h-64 md:h-96 object-cover">
+                    @endif
+
+                    <!-- Post Content -->
+                    <div class="p-6">
+                        <!-- Category and Meta -->
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="flex items-center space-x-4">
+                                <span class="inline-block bg-blue-100 text-blue-800 text-sm px-3 py-1 rounded-full">
+                                    {{ $post->category->name }}
+                                </span>
+                                <div class="flex items-center text-sm text-gray-500">
+                                    <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path>
+                                    </svg>
+                                    {{ $post->user->name }}
+                                </div>
+                                <div class="flex items-center text-sm text-gray-500">
+                                    <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"></path>
+                                    </svg>
+                                    {{ $post->created_at->format('F d, Y') }}
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Post Title -->
+                        <h1 class="text-3xl font-bold text-gray-900 mb-6">
+                            {{ $post->title }}
+                        </h1>
+
+                        <!-- Post Content -->
+                        <div class="prose max-w-none">
+                            {!! nl2br(e($post->content)) !!}
+                        </div>
+
+                        <!-- Comments Section -->
+                        <div class="mt-12 border-t pt-8">
+                            <h3 class="text-xl font-semibold text-gray-900 mb-6">
+                                Comments ({{ $post->comments->count() }})
+                            </h3>
+
+                            @if($post->comments->count() > 0)
+                                <div class="space-y-4">
+                                    @foreach($post->comments as $comment)
+                                        <div class="bg-gray-50 p-4 rounded-lg">
+                                            <div class="flex items-center justify-between mb-2">
+                                                <div class="font-medium text-gray-900">
+                                                    {{ $comment->user->name }}
+                                                </div>
+                                                <div class="text-sm text-gray-500">
+                                                    {{ $comment->created_at->format('M d, Y g:i A') }}
+                                                </div>
+                                            </div>
+                                            <p class="text-gray-700">{{ $comment->content }}</p>
+                                        </div>
+                                    @endforeach
+                                </div>
+                            @else
+                                <p class="text-gray-500 italic">No comments yet. Be the first to comment!</p>
+                            @endif
+
+                            <!-- Login to comment message -->
+                            <div class="mt-8 text-center">
+                                <p class="text-gray-500 mb-4">Please <a href="{{ route('login') }}" class="text-blue-600 hover:text-blue-800">login</a> to comment.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </x-guest-layout>
 @endauth
