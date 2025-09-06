@@ -26,9 +26,9 @@
                 </div>
 
                 <!-- Main Content -->
-                <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
                     <!-- Main Content -->
-                    <div class="lg:col-span-2">
+                    <div class="lg:col-span-1">
                         <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg mb-6 lg:mb-8">
                             <div class="p-4 sm:p-6 lg:p-8">
                                 <div class="flex items-center mb-4 sm:mb-6">
@@ -263,9 +263,9 @@
                 </div>
 
                 <!-- Main Content -->
-                <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
                     <!-- Main Content -->
-                    <div class="lg:col-span-2">
+                    <div class="lg:col-span-1">
                         <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg mb-6 lg:mb-8">
                             <div class="p-4 sm:p-6 lg:p-8">
                                 <div class="flex items-center mb-4 sm:mb-6">
