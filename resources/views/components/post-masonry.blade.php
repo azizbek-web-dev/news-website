@@ -4,7 +4,7 @@
         <div class="break-inside-avoid bg-white overflow-hidden shadow-sm rounded-lg hover:shadow-lg transition-shadow duration-300">
             <!-- Post Image -->
             @if($post->image)
-                <img src="{{ asset('storage/' . $post->image) }}" 
+                <img src="{{ $post->image }}" 
                      alt="{{ $post->title }}" 
                      class="w-full h-48 object-cover">
             @else

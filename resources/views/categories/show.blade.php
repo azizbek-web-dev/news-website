@@ -38,7 +38,7 @@
                             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg hover:shadow-lg transition-shadow duration-300">
                                 <!-- Post Image -->
                                 @if($post->image)
-                                    <img src="{{ asset('storage/' . $post->image) }}" 
+                                    <img src="{{ $post->image }}" 
                                          alt="{{ Str::title($post->title) }}" 
                                          class="w-full h-48 object-cover">
                                 @else
@@ -139,7 +139,7 @@
                             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg hover:shadow-lg transition-shadow duration-300">
                                 <!-- Post Image -->
                                 @if($post->image)
-                                    <img src="{{ asset('storage/' . $post->image) }}" 
+                                    <img src="{{ $post->image }}" 
                                          alt="{{ Str::title($post->title) }}" 
                                          class="w-full h-48 object-cover">
                                 @else

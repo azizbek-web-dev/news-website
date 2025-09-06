@@ -6,7 +6,7 @@
                 <!-- Post Image -->
                 <div class="md:w-1/3">
                     @if($post->image)
-                        <img src="{{ asset('storage/' . $post->image) }}" 
+                        <img src="{{ $post->image }}" 
                              alt="{{ $post->title }}" 
                              class="w-full h-48 md:h-full object-cover">
                     @else
