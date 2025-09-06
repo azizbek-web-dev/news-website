@@ -70,6 +70,33 @@ body {
     }
 }
 
+/* iPhone specific fixes */
+@supports (-webkit-touch-callout: none) {
+    /* iPhone Safari specific styles */
+    .mobile-nav-button {
+        -webkit-tap-highlight-color: transparent;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        user-select: none;
+    }
+    
+    .mobile-nav-menu {
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    /* Fix for iPhone viewport issues */
+    body {
+        -webkit-text-size-adjust: 100%;
+        -webkit-font-smoothing: antialiased;
+    }
+    
+    /* Ensure proper touch targets on iPhone */
+    button, a {
+        min-height: 44px;
+        min-width: 44px;
+    }
+}
+
 /* Custom styles for dynamic layouts */
 .line-clamp-2 {
     display: -webkit-box;
