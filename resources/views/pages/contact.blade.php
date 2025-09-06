@@ -21,7 +21,7 @@
                         <div class="p-6">
                             <h2 class="text-2xl font-bold text-gray-900 mb-6">Send us a message</h2>
                             
-                            <form method="POST" action="{{ route('contact.submit') }}">
+                            <form method="POST" action="{{ route('contact.store') }}">
                                 @csrf
                                 
                                 <div class="mb-4">
@@ -196,7 +196,7 @@
                         <div class="p-6">
                             <h2 class="text-2xl font-bold text-gray-900 mb-6">Send us a message</h2>
                             
-                            <form method="POST" action="{{ route('contact.submit') }}">
+                            <form method="POST" action="{{ route('contact.store') }}">
                                 @csrf
                                 
                                 <div class="mb-4">

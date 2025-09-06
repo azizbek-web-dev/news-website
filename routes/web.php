@@ -6,6 +6,7 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CommentController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\PageController;
+use App\Http\Controllers\ContactController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -22,8 +23,8 @@ Route::resource('categories', CategoryController::class)->only(['index', 'show']
 
 // Page routes
 Route::get('/about', [PageController::class, 'about'])->name('about');
-Route::get('/contact', [PageController::class, 'contact'])->name('contact');
-Route::post('/contact', [PageController::class, 'contactSubmit'])->name('contact.submit');
+Route::get('/contact', [ContactController::class, 'index'])->name('contact');
+Route::post('/contact', [ContactController::class, 'store'])->name('contact.store');
 
 // Protected routes
 Route::middleware('auth')->group(function () {
@@ -68,6 +69,11 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(fun
     // Comments management
     Route::get('/comments', [AdminController::class, 'comments'])->name('comments');
     Route::delete('/comments/{comment}', [AdminController::class, 'deleteComment'])->name('comments.delete');
+    
+    // Contact messages management
+    Route::get('/contacts', [AdminController::class, 'contacts'])->name('contacts');
+    Route::get('/contacts/{contact}', [AdminController::class, 'showContact'])->name('contacts.show');
+    Route::delete('/contacts/{contact}', [AdminController::class, 'deleteContact'])->name('contacts.delete');
 });
 
 require __DIR__.'/auth.php';

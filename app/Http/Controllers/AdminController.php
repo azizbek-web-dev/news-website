@@ -6,6 +6,7 @@ use App\Models\User;
 use App\Models\Post;
 use App\Models\Category;
 use App\Models\Comment;
+use App\Models\Contact;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
@@ -26,6 +27,7 @@ class AdminController extends Controller
             'posts' => Post::count(),
             'categories' => Category::count(),
             'comments' => Comment::count(),
+            'contacts' => Contact::count(),
         ];
 
         $recentPosts = Post::with(['user', 'category'])->latest()->take(5)->get();
@@ -174,5 +176,26 @@ class AdminController extends Controller
     {
         $comment->delete();
         return redirect()->route('admin.comments')->with('success', 'Comment deleted successfully.');
+    }
+
+    /**
+     * Contact Messages Management
+     */
+    public function contacts()
+    {
+        $contacts = Contact::latest()->paginate(10);
+        return view('admin.contacts.index', compact('contacts'));
+    }
+
+    public function showContact(Contact $contact)
+    {
+        $contact->update(['is_read' => true]);
+        return view('admin.contacts.show', compact('contact'));
+    }
+
+    public function deleteContact(Contact $contact)
+    {
+        $contact->delete();
+        return redirect()->route('admin.contacts')->with('success', 'Contact message deleted successfully.');
     }
 }

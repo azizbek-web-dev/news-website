@@ -62,6 +62,14 @@
                     </svg>
                     Comments
                 </a>
+                
+                <a href="{{ route('admin.contacts') }}" 
+                   class="flex items-center px-4 py-2 text-gray-300 hover:bg-gray-700 hover:text-white {{ request()->routeIs('admin.contacts*') ? 'bg-gray-700 text-white' : '' }}">
+                    <svg class="w-5 h-5 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" clip-rule="evenodd"></path>
+                    </svg>
+                    Contact messages
+                </a>
             </nav>
         </div>
 
