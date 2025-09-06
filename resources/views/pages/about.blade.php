@@ -199,7 +199,7 @@
                         <!-- Contact Information -->
                         <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                             <div class="p-4 sm:p-6">
-                                <div class="flex items-center mb-4 sm:mb-6">
+                                <div class="flex items-center justify-center sm:justify-start mb-4 sm:mb-6">
                                     <div class="bg-gray-100 rounded-full p-2 sm:p-3 mr-3 sm:mr-4">
                                         <svg class="w-5 h-5 sm:w-6 sm:h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
@@ -207,7 +207,7 @@
                                     </div>
                                     <h2 class="text-lg sm:text-xl font-semibold text-gray-800">Contact us</h2>
                                 </div>
-                                <div class="space-y-3 sm:space-y-4">
+                                <div class="space-y-3 sm:space-y-4 text-center sm:text-left">
                                     <div class="flex items-center">
                                         <svg class="w-4 h-4 sm:w-5 sm:h-5 text-gray-400 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
@@ -436,7 +436,7 @@
                         <!-- Contact Information -->
                         <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                             <div class="p-4 sm:p-6">
-                                <div class="flex items-center mb-4 sm:mb-6">
+                                <div class="flex items-center justify-center sm:justify-start mb-4 sm:mb-6">
                                     <div class="bg-gray-100 rounded-full p-2 sm:p-3 mr-3 sm:mr-4">
                                         <svg class="w-5 h-5 sm:w-6 sm:h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
@@ -444,7 +444,7 @@
                                     </div>
                                     <h2 class="text-lg sm:text-xl font-semibold text-gray-800">Contact us</h2>
                                 </div>
-                                <div class="space-y-3 sm:space-y-4">
+                                <div class="space-y-3 sm:space-y-4 text-center sm:text-left">
                                     <div class="flex items-center">
                                         <svg class="w-4 h-4 sm:w-5 sm:h-5 text-gray-400 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>

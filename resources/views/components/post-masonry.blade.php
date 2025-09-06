@@ -1,7 +1,7 @@
 <!-- Masonry Layout -->
 <div class="columns-1 md:columns-2 lg:columns-3 xl:columns-4 gap-6 space-y-6">
     @foreach($posts as $post)
-        <div class="break-inside-avoid bg-white overflow-hidden shadow-sm sm:rounded-lg hover:shadow-lg transition-shadow duration-300">
+        <div class="break-inside-avoid bg-white overflow-hidden shadow-sm rounded-lg hover:shadow-lg transition-shadow duration-300">
             <!-- Post Image -->
             @if($post->image)
                 <img src="{{ asset('storage/' . $post->image) }}" 

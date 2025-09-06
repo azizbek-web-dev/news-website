@@ -1,7 +1,7 @@
 <!-- Grid Layout -->
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
     @foreach($posts as $post)
-        <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg hover:shadow-lg transition-shadow duration-300">
+        <div class="bg-white overflow-hidden shadow-sm rounded-lg hover:shadow-lg transition-shadow duration-300">
             <!-- Post Image -->
             @if($post->image)
                 <img src="{{ asset('storage/' . $post->image) }}" 

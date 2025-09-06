@@ -2,7 +2,7 @@
     <div class="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
             <!-- About Section -->
-            <div>
+            <div class="text-center md:text-left">
                 <h3 class="text-lg font-semibold mb-4">About news website</h3>
                 <p class="text-gray-300 text-sm">
                     Your trusted source for the latest news and updates. Stay informed with our comprehensive coverage of current events.
@@ -10,7 +10,7 @@
             </div>
 
             <!-- Quick Links -->
-            <div>
+            <div class="text-center md:text-left">
                 <h3 class="text-lg font-semibold mb-4">Quick links</h3>
                 <ul class="space-y-2">
                     <li><a href="{{ route('posts.index') }}" class="text-gray-300 hover:text-white text-sm">Latest posts</a></li>
@@ -25,7 +25,7 @@
             </div>
 
             <!-- Contact Info -->
-            <div>
+            <div class="text-center md:text-left">
                 <h3 class="text-lg font-semibold mb-4">Contact</h3>
                 <div class="text-gray-300 text-sm space-y-2">
                     <p>Email: info@newswebsite.com</p>

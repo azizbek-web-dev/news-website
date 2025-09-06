@@ -1,7 +1,7 @@
 <!-- List Layout -->
 <div class="space-y-6">
     @foreach($posts as $post)
-        <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg hover:shadow-lg transition-shadow duration-300">
+        <div class="bg-white overflow-hidden shadow-sm rounded-lg hover:shadow-lg transition-shadow duration-300">
             <div class="flex flex-col md:flex-row">
                 <!-- Post Image -->
                 <div class="md:w-1/3">
